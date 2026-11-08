@@ -1,0 +1,59 @@
+{
+  "lead": "Curso práctico de MIAX: de la primera máquina virtual al despliegue automático de aplicaciones de datos, con la consola de AWS abierta en todo momento.",
+  "modules": [
+    { "title": "Empezar", "summary": "Qué necesitas antes de la primera clase.", "lessons": [
+      { "id": "00-como-usar", "title": "Cómo usar esta web" }
+    ]},
+    { "title": "Fundamentos de AWS", "summary": "Regiones, costes, identidades y red.", "lessons": [
+      { "id": "01-intro", "title": "Introducción a AWS" },
+      { "id": "02-cuenta-costes", "title": "Cuenta, costes y alertas" },
+      { "id": "03-iam-cli", "title": "IAM, CLI y boto3" },
+      { "id": "04-vpc", "title": "Redes: VPC" }
+    ]},
+    { "title": "Máquinas virtuales: EC2", "summary": "Lanzar, conectar, automatizar y publicar un API.", "lessons": [
+      { "id": "05-ec2", "title": "Amazon EC2" },
+      { "id": "06-ssh-scp", "title": "Conexión SSH y SCP" },
+      { "id": "07-vscode", "title": "Desarrollo remoto con VS Code" },
+      { "id": "08-cron", "title": "Cronjobs" },
+      { "id": "09-env", "title": "Variables de entorno" },
+      { "id": "10-fastapi-ec2", "title": "Primer API en EC2" }
+    ]},
+    { "title": "Almacenamiento: S3", "summary": "Buckets y objetos desde la consola, la CLI, boto3 y pandas.", "lessons": [
+      { "id": "11-s3", "title": "Amazon S3" }
+    ]},
+    { "title": "Serverless: Lambda", "summary": "Funciones, empaquetado y disparadores.", "lessons": [
+      { "id": "12-lambda", "title": "Primeros pasos con Lambda" },
+      { "id": "13-lambda-paquetes", "title": "Empaquetado y buenas prácticas" },
+      { "id": "14-lambda-triggers", "title": "Disparadores: cron, S3 y HTTP" }
+    ]},
+    { "title": "Contenedores en AWS", "summary": "Docker, registro de imágenes y despliegue.", "lessons": [
+      { "id": "15-docker-ec2", "title": "Docker en EC2" },
+      { "id": "16-ecr", "title": "Amazon ECR" },
+      { "id": "17-ecs-express", "title": "ECS Express Mode" },
+      { "id": "18-lambda-docker", "title": "Lambda con Docker" }
+    ]},
+    { "title": "DevOps", "summary": "Tests, integración continua y despliegue automático.", "lessons": [
+      { "id": "19-devops", "title": "Filosofía DevOps" },
+      { "id": "20-tests", "title": "Tests y calidad de código" },
+      { "id": "21-actions", "title": "GitHub Actions" },
+      { "id": "22-cd-lambda", "title": "Despliegue continuo de Lambda" },
+      { "id": "23-cd-ecs", "title": "Despliegue continuo en ECS" }
+    ]},
+    { "title": "Datos en AWS", "summary": "NoSQL con DynamoDB y SQL sobre S3 con Athena.", "lessons": [
+      { "id": "24-dynamodb", "title": "Amazon DynamoDB" },
+      { "id": "25-athena", "title": "Amazon Athena" }
+    ]},
+    { "title": "Documentos", "summary": "Extraer texto y tablas de PDF e imágenes.", "lessons": [
+      { "id": "26-textract", "title": "Amazon Textract" }
+    ]},
+    { "title": "Infraestructura como código", "summary": "Definir recursos de AWS con Terraform.", "lessons": [
+      { "id": "27-terraform", "title": "Terraform" }
+    ]},
+    { "title": "Proyecto final", "summary": "Dos casos de uso para integrar lo aprendido.", "lessons": [
+      { "id": "28-proyecto", "title": "Casos de uso" }
+    ]},
+    { "title": "Anexo", "summary": "Material complementario.", "lessons": [
+      { "id": "29-alb-apigw", "title": "Load Balancer y API Gateway" }
+    ]}
+  ]
+}

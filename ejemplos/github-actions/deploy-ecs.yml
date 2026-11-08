@@ -1,0 +1,57 @@
+name: Deploy ECS Express
+
+on:
+  push:
+    branches: [main]
+
+env:
+  AWS_REGION: eu-west-3
+  ECR_REPOSITORY: miax-suma
+  SERVICE_NAME: miax-suma
+  ACCOUNT_ID: "TU_CUENTA"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+      - run: python -m pip install -r requirements.txt pytest httpx
+      - run: pytest
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: arn:aws:iam::${{ env.ACCOUNT_ID }}:role/miax-github-deploy
+          aws-region: ${{ env.AWS_REGION }}
+
+      - id: ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push
+        env:
+          IMAGE: ${{ steps.ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
+        run: |
+          docker build --platform linux/amd64 -t "$IMAGE" .
+          docker push "$IMAGE"
+          echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
+
+      - uses: aws-actions/amazon-ecs-deploy-express-service@v1
+        with:
+          service-name: ${{ env.SERVICE_NAME }}
+          image: ${{ env.IMAGE }}
+          execution-role-arn: arn:aws:iam::${{ env.ACCOUNT_ID }}:role/ecsTaskExecutionRole
+          infrastructure-role-arn: arn:aws:iam::${{ env.ACCOUNT_ID }}:role/ecsInfrastructureRoleForExpressServices
+          container-port: 8080
+          health-check-path: /health

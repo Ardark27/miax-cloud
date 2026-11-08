@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cloud con AWS · MIAX</title>
+  <meta name="description" content="Curso práctico de AWS para MIAX: diapositivas con enlaces directos a la consola, ejercicios y código actualizado.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>
+    // Aplica el tema antes de pintar para evitar un destello.
+    try {
+      var t = localStorage.getItem('miax-aws:theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">Cloud con AWS <span>MIAX</span></a>
+    <div class="crumb" id="crumb"></div>
+    <div class="tools">
+      <button class="chip" id="btn-settings" title="Región y datos personales (A)">
+        <span class="chip-label">Región</span> <strong id="region-label"></strong>
+      </button>
+      <button class="tool" id="btn-mode" title="Cambiar entre diapositivas y guía (G)">Guía</button>
+      <button class="tool" id="btn-float" title="Abrir los pasos en una ventana lateral (P)">Ventana lateral</button>
+      <button class="tool icon" id="btn-theme" title="Cambiar tema" aria-label="Cambiar tema">◐</button>
+      <button class="tool icon" id="btn-help" title="Atajos de teclado (?)" aria-label="Atajos de teclado">?</button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1"></main>
+
+  <nav class="pager" id="pager" hidden>
+    <button class="tool" id="btn-prev" aria-label="Anterior">←</button>
+    <select id="slide-index" aria-label="Ir a la diapositiva"></select>
+    <button class="tool" id="btn-next" aria-label="Siguiente">→</button>
+    <div class="bar" aria-hidden="true"><i id="bar-fill"></i></div>
+  </nav>
+
+  <dialog id="dlg-settings">
+    <form method="dialog" id="form-settings">
+      <h2>Tus datos para los comandos</h2>
+      <p class="muted">Se guardan solo en este navegador. Sirven para personalizar los enlaces a la consola y el código que copias.</p>
+      <label>Región de AWS
+        <select id="f-region"></select>
+      </label>
+      <label>ID de cuenta (12 dígitos)
+        <input id="f-account" inputmode="numeric" maxlength="12" pattern="[0-9]{12}" placeholder="123456789012" autocomplete="off">
+      </label>
+      <label>Alias para nombrar recursos
+        <input id="f-alias" maxlength="20" pattern="[a-z0-9]([a-z0-9\-]*[a-z0-9])?" placeholder="ana-g" autocomplete="off">
+        <small class="muted">Minúsculas, números y guiones. Hace únicos los nombres de tus buckets.</small>
+      </label>
+      <div class="dlg-actions">
+        <button class="tool" value="cancel" formnovalidate>Cancelar</button>
+        <button class="tool primary" value="ok">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="dlg-help">
+    <h2>Atajos de teclado</h2>
+    <dl class="keys">
+      <dt><kbd>→</kbd> <kbd>Espacio</kbd></dt><dd>Siguiente</dd>
+      <dt><kbd>←</kbd></dt><dd>Anterior</dd>
+      <dt><kbd>G</kbd></dt><dd>Diapositivas / guía</dd>
+      <dt><kbd>P</kbd></dt><dd>Ventana lateral sincronizada</dd>
+      <dt><kbd>A</kbd></dt><dd>Región y datos</dd>
+      <dt><kbd>F</kbd></dt><dd>Pantalla completa</dd>
+      <dt><kbd>Esc</kbd></dt><dd>Volver al índice</dd>
+    </dl>
+    <h3>Ir y volver de AWS</h3>
+    <p class="muted">Los botones naranjas abren la consola siempre en la misma pestaña. Vuelve aquí con <kbd>Ctrl</kbd>+<kbd>Tab</kbd>, o usa la ventana lateral para ver los pasos junto a AWS.</p>
+    <form method="dialog" class="dlg-actions"><button class="tool primary">Entendido</button></form>
+  </dialog>
+
+  <script src="assets/vendor/marked.min.js"></script>
+  <script src="assets/vendor/highlight.min.js"></script>
+  <script src="assets/vendor/dockerfile.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Ejemplos del curso Cloud con AWS (MIAX)
+
+api-suma/         API de FastAPI con Docker (ECR y ECS Express Mode)
+lambda-docker/    Función Lambda con imagen de contenedor
+tests/            Ejemplos de pytest
+s3/               Notebook de boto3 y pandas
+dynamodb/         Creación, carga y lectura de MARKET_DATA
+athena/           Consulta desde Python
+textract/         Análisis asíncrono de un PDF
+github-actions/   Workflows de integración y despliegue
+terraform/        Bucket, EC2, DynamoDB, ECS Express Mode y Lambda
+
+Sustituye TU_CUENTA, TU_ALIAS y la región por tus valores.
+Los datos de mercado están en:
+https://github.com/fernandodelacalle/miax-aws/tree/main/market_data

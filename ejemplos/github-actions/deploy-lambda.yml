@@ -1,0 +1,44 @@
+name: Deploy Lambda
+
+on:
+  push:
+    branches: [main]
+
+env:
+  AWS_REGION: eu-west-3
+  ECR_REPOSITORY: miax-lambda
+  FUNCTION_NAME: miax-docker
+  ROLE_ARN: arn:aws:iam::TU_CUENTA:role/miax-github-deploy
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ env.ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - id: ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push
+        env:
+          IMAGE: ${{ steps.ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
+        run: |
+          docker build --platform linux/amd64 --provenance=false -t "$IMAGE" .
+          docker push "$IMAGE"
+          echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
+
+      - name: Update function
+        run: |
+          aws lambda update-function-code \
+            --function-name "$FUNCTION_NAME" \
+            --image-uri "$IMAGE"
+          aws lambda wait function-updated --function-name "$FUNCTION_NAME"
