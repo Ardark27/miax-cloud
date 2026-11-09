@@ -36,6 +36,14 @@ Edita las reglas de entrada en [Security Groups](aws:ec2-sg).
 
 ---
 
+# Reglas de entrada
+
+![Reglas de entrada para SSH y TCP 8080](assets/img/10-fastapi-ec2/ports_fasta_api_ec2.png)
+
+<p class="pie">Captura de una versión anterior de la consola: la pantalla actual puede variar.</p>
+
+---
+
 # Python actual en la instancia
 
 Amazon Linux 2023 trae Python 3.9, demasiado antiguo para las últimas versiones de muchas librerías. Instala uno reciente con [uv](https://docs.astral.sh/uv/):

@@ -16,6 +16,14 @@ Antes se guardaban `AWS_ACCESS_KEY_ID` y `AWS_SECRET_ACCESS_KEY` como secretos. 
 
 ---
 
+# Arquitectura de referencia
+
+![GitHub Actions ejecuta tests y análisis, construye la imagen y la publica en ECR](assets/img/22-cd-lambda/action.jpeg)
+
+<p class="pie">El esquema llega hasta ECR; nuestro workflow añade OIDC y la actualización de la función.</p>
+
+---
+
 # Configurar OIDC
 
 ::: demo Crear el proveedor de identidad

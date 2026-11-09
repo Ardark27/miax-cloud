@@ -207,3 +207,16 @@ body.float .slide.cover h1 { font-size: 1.7em; }
   .module ul { grid-column: 1; }
   .module .num { font-size: 16px; }
 }
+
+/* Imágenes de las lecciones: fondo claro para que los PNG transparentes se lean en tema oscuro. */
+.slide img { display: block; width: auto; height: auto; max-width: 100%; max-height: max(240px, calc(100vh - 400px)); margin: 14px auto; border-radius: 6px; background: #fff; }
+.slide p:has(> img + img) { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px; }
+.slide p:has(> img + img) > img { margin: 0; max-width: 46%; max-height: max(200px, calc(100vh - 420px)); }
+.slide .pie { margin: 6px 0 0; text-align: center; color: var(--muted); font-size: .82em; }
+@media (max-width: 640px) { .slide p:has(> img + img) > img { max-width: 100%; } }
+
+/* Imagen ampliada: ocupa la pantalla sin deformarse, según la proporción que fija app.js. */
+.slide img:not(a img) { cursor: zoom-in; }
+#dlg-image { width: fit-content; max-width: none; max-height: none; margin: auto; padding: 0; border: 0; outline: none; background: transparent; overflow: hidden; cursor: zoom-out; }
+#dlg-image::backdrop { background: rgba(10, 14, 22, .85); }
+#dlg-image img { display: block; width: min(96vw, calc(94vh * var(--ratio, 1))); height: auto; border-radius: 6px; background: #fff; }

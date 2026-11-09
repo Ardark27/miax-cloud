@@ -54,12 +54,7 @@ Las dos herramientas actuales para no llevarse sustos:
 - **AWS Budgets**: avisa cuando el gasto real o previsto supera un límite. Es la opción recomendada.
 - **CloudWatch**: permite alarmas sobre cualquier métrica, incluida la facturación.
 
-::: demo Crear un presupuesto de gasto cero
-1. Inicia sesión como usuario raíz y abre [Budgets](aws:budgets).
-2. Elige **Create budget** → **Use a template**.
-3. Selecciona **Zero spend budget**.
-4. Escribe tu correo y crea el presupuesto.
-:::
+Crearás tu presupuesto en el último ejercicio de esta lección.
 
 ::: demo Revisar créditos y gasto
 1. Abre [Facturación](aws:billing) y revisa el gasto del mes.
@@ -68,16 +63,67 @@ Las dos herramientas actuales para no llevarse sustos:
 
 ---
 
+# Consigue 100 $ más en créditos
+
+AWS da **20 $ por cada actividad** completada. Son cinco y las haremos como ejercicios:
+
+| Actividad | Lección |
+|---|---|
+| Crear un presupuesto de costes | Esta lección |
+| Lanzar una instancia EC2 | [Amazon EC2](#/05-ec2) |
+| Crear una web con Lambda | [Disparadores](#/14-lambda-triggers) |
+| Crear una base de datos Aurora | [DynamoDB](#/24-dynamodb) |
+| Usar un modelo en Bedrock | [Textract](#/26-textract) |
+
+---
+
+# Dónde están las actividades
+
+En la [página de inicio de la consola](aws:home), busca **Explore AWS** y, en **Filtrar**, elige **Earn AWS credits**.
+
+![Widget Explore AWS con las actividades que dan 20 $ de crédito](assets/img/02-cuenta-costes/explore-aws.png)
+
+---
+
+# Reglas de las actividades
+
+- Empieza cada una desde el widget, con **Iniciar actividad**, para seguir sus pasos. Hacer la tarea por tu cuenta también puede contar: el presupuesto se completa así.
+- Tienes **6 meses** desde que abriste la cuenta. Los créditos ganados caducan a los 12 meses.
+- Casi todas gastan algo de crédito mientras las haces, así que borra lo creado al terminar.
+- Los créditos pueden tardar unos minutos en aparecer.
+
+::: nota Si no ves el widget
+Con un usuario de IAM puede no aparecer. En ese caso, entra como usuario raíz solo para hacer la actividad.
+:::
+
+---
+
 # Ejercicio
 
 ::: ejercicio Prepara tu cuenta
-1. Crea una cuenta en [aws.amazon.com](https://aws.amazon.com/).
-2. Activa la autenticación multifactor (MFA) del usuario raíz.
-3. Crea un presupuesto de gasto cero.
-4. Crea otro presupuesto mensual de 10 $ con aviso al 80 %.
+1. Comprueba que tu cuenta está activa y con MFA, como vimos en la Introducción.
 :::
 
 ::: limpieza Hábito de cada clase
 - Al terminar, repasa lo creado en la región del curso.
 - Una instancia detenida no paga CPU, pero su disco EBS sí.
+:::
+
+---
+
+# Actividad de créditos: presupuesto
+
+![Ficha de la actividad de presupuesto de costes, con premio de 20 dólares](assets/img/02-cuenta-costes/actividad-creditos.png)
+
+---
+
+# Ejercicio: presupuesto de costes
+
+::: ejercicio Gana tus primeros 20 $
+1. Inicia sesión como usuario raíz y abre [Budgets](aws:budgets).
+2. Elige **Create budget** → **Use a template**.
+3. Selecciona **Zero spend budget**.
+4. Escribe tu correo y crea el presupuesto.
+5. En la [consola](aws:home), comprueba en **Explore AWS** que la actividad aparece como completada.
+6. Revisa en [Facturación](aws:billing) que los 20 $ se suman a tus créditos.
 :::

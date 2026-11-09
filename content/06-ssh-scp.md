@@ -18,6 +18,14 @@ Para salir: `exit` o <kbd>Ctrl</kbd>+<kbd>D</kbd>.
 
 ---
 
+# Dónde está el comando
+
+![Pestaña SSH client del diálogo Connect de EC2](assets/img/06-ssh-scp/ec2_2.png)
+
+<p class="pie">Captura de una versión anterior de la consola: la pantalla actual puede variar.</p>
+
+---
+
 # Permisos de la clave
 
 Si aparece `WARNING: UNPROTECTED PRIVATE KEY FILE!`:

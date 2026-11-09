@@ -83,6 +83,14 @@ aws lambda update-function-code \
 
 ---
 
+# Crear la función desde una imagen
+
+![Opción Container image al crear una función](assets/img/18-lambda-docker/create.png)
+
+<p class="pie">Captura de una versión anterior de la consola: la pantalla actual puede variar.</p>
+
+---
+
 # Ejercicio
 
 ::: ejercicio Función con imagen

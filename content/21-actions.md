@@ -23,6 +23,14 @@ Los workflows viven en `.github/workflows/`.
 
 ---
 
+# De workflow a action
+
+![Jerarquía de workflow, job, step y action](assets/img/21-actions/workflow.png)
+
+<p class="pie">La versión de <code>checkout</code> del dibujo es antigua: usa la del ejemplo siguiente.</p>
+
+---
+
 # Ejemplo
 
 ```yaml

@@ -16,6 +16,12 @@ Dockerfile -> docker build -> Imagen -> docker push -> Amazon ECR -> Lambda o EC
 
 ---
 
+# El ciclo de una imagen
+
+![Se escribe el código, se sube la imagen a ECR y se ejecuta en ECS, EKS o en local](assets/img/16-ecr/ecr.png)
+
+---
+
 # Crear el repositorio
 
 ::: demo Desde la consola

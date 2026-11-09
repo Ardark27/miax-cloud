@@ -20,6 +20,12 @@ Desarrollo :: quiere cambiar rápido -> El muro de la confusión -> Operaciones 
 
 ---
 
+# El muro entre Dev y Ops
+
+![Desarrollo y operaciones separados por un muro](assets/img/19-devops/1.png)
+
+---
+
 # Qué propone DevOps
 
 Automatizar y medir cada paso de la construcción del software.
@@ -36,6 +42,30 @@ Planificar -> Código -> Build -> Test -> Publicar -> Desplegar -> Operar -> Mon
 
 ---
 
+# Muchas definiciones
+
+![Distintas definiciones de DevOps alrededor de un elefante](assets/img/19-devops/2.png)
+
+---
+
+# El ciclo DevOps
+
+![Bucle infinito de plan, build, integration, deploy y operate](assets/img/19-devops/3.png)
+
+---
+
+# Herramientas
+
+![Herramientas habituales en cada fase del ciclo DevOps](assets/img/19-devops/11.png)
+
+---
+
+# Prácticas
+
+![Prácticas: repositorio único, builds automatizadas, tests, iteraciones, entornos, visibilidad y despliegues](assets/img/19-devops/5.png)
+
+---
+
 # CI/CD
 
 | | Qué hace |
@@ -45,6 +75,12 @@ Planificar -> Código -> Build -> Test -> Publicar -> Desplegar -> Operar -> Mon
 | **Despliegue continuo** | Lleva cada cambio válido a producción automáticamente |
 
 **Prácticas clave**: un único repositorio, builds automatizadas, tests automáticos, entornos estables, iteraciones frecuentes, máxima visibilidad y despliegues automáticos.
+
+---
+
+# CI y CD
+
+![Bucle de integración y despliegue continuos](assets/img/19-devops/6.png) ![Continuous Delivery y Continuous Deployment](assets/img/19-devops/4.png)
 
 ---
 
@@ -61,6 +97,12 @@ Los microservicios no son mejores por defecto: tienen un coste de operación rea
 
 ---
 
+# Un proceso o varios
+
+![Monolito en un solo proceso](assets/img/19-devops/9.png) ![Microservicios en procesos separados que se comunican](assets/img/19-devops/10.png)
+
+---
+
 # Nuestro flujo de trabajo
 
 ::: flow
@@ -68,3 +110,9 @@ git push -> GitHub Actions :: tests y linter -> Build :: imagen Docker -> ECR ->
 :::
 
 En las próximas lecciones lo construimos paso a paso.
+
+---
+
+# Del código a producción
+
+![Código, tests, pull request, servidor de CI y despliegue](assets/img/19-devops/13.png)

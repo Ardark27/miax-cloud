@@ -72,6 +72,14 @@ Debajo del resultado verás los **datos escaneados** de la consulta.
 
 ---
 
+# Resultado de una consulta
+
+![Filas de market_data devueltas por Athena](assets/img/25-athena/at_6.png)
+
+<p class="pie">Captura de una versión anterior de la consola: la pantalla actual puede variar.</p>
+
+---
+
 # Desde Python
 
 ```bash

@@ -97,6 +97,14 @@ Si superas 250 MB descomprimidos, usa una imagen de contenedor.
 
 ---
 
+# Dónde está el rol
+
+![Rol de ejecución en Configuration, Permissions](assets/img/13-lambda-paquetes/role.png)
+
+<p class="pie">Captura de una versión anterior de la consola: la pantalla actual puede variar.</p>
+
+---
+
 # Configuración
 
 En **Configuration** → **General configuration** ajustamos:
@@ -111,6 +119,14 @@ import os
 
 BUCKET = os.environ["BUCKET"]
 ```
+
+---
+
+# Memoria y timeout
+
+![Pantalla Edit basic settings con memoria y timeout](assets/img/13-lambda-paquetes/memory.png)
+
+<p class="pie">Captura de una versión anterior de la consola: la pantalla actual puede variar.</p>
 
 ---
 

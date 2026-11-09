@@ -17,6 +17,12 @@ Excepto la clave principal, la tabla **no tiene esquema**: cada elemento puede t
 
 ---
 
+# Elementos sin esquema fijo
+
+![Tabla People con elementos de atributos distintos](assets/img/24-dynamodb/HowItWorksPeople.png)
+
+---
+
 # Clave principal
 
 | Tipo | Composición | Ejemplo |
@@ -134,4 +140,35 @@ Soluciones: [ejemplos/dynamodb](ejemplos/LEEME.txt).
 
 ::: limpieza Al terminar
 - Borra las tablas en [DynamoDB](aws:dynamodb).
+:::
+
+---
+
+# Actividad de créditos: Aurora
+
+DynamoDB es NoSQL. **Amazon RDS** y **Aurora** ofrecen bases de datos relacionales gestionadas, compatibles con MySQL o PostgreSQL.
+
+![Ficha de la actividad de crear una base de datos de Aurora o RDS, con premio de 20 dólares](assets/img/24-dynamodb/actividad-creditos.png)
+
+---
+
+# Ejercicio: Aurora
+
+::: ejercicio Gana 20 $ con Aurora
+1. En la [consola](aws:home), abre **Explore AWS**, filtra por **Earn AWS credits**, elige **Crear una base de datos de Aurora o RDS** y pulsa **Iniciar actividad**.
+2. Sigue sus pasos: lanzarás una base de datos **Aurora sin servidor**.
+3. Espera en [RDS](aws:rds) al estado **Available** y revisa la configuración.
+4. Comprueba en **Explore AWS** que aparece como completada.
+:::
+
+---
+
+# Limpieza: Aurora
+
+::: limpieza Obligatorio al terminar
+La base de datos se cobra por hora mientras exista.
+
+1. En [RDS](aws:rds), selecciona la instancia y elige **Actions** → **Delete**.
+2. Desmarca la instantánea final y confirma.
+3. Borra también el clúster si sigue en la lista.
 :::

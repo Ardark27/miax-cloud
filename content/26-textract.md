@@ -85,3 +85,26 @@ Formato de salida: [objeto Block](https://docs.aws.amazon.com/textract/latest/dg
 3. Repite con `start_document_analysis` y `FeatureTypes=["TABLES"]`.
 4. Busca las tablas en los bloques devueltos.
 :::
+
+---
+
+# Actividad de créditos: Bedrock
+
+Textract resuelve una tarea concreta. **Amazon Bedrock** da acceso a modelos fundacionales de distintos proveedores.
+
+![Ficha de la actividad de usar un modelo fundacional en Bedrock, con premio de 20 dólares](assets/img/26-textract/actividad-creditos.png)
+
+---
+
+# Ejercicio: Bedrock
+
+::: ejercicio Gana 20 $ con Bedrock
+1. En la [consola](aws:home), abre **Explore AWS**, filtra por **Earn AWS credits**, elige **Utilice un modelo fundacional en el entorno de experimentación de Amazon Bedrock** y pulsa **Iniciar actividad**.
+2. Elige un modelo en el entorno de experimentación.
+3. Envía una petición, como `Explica en tres frases qué es una zona de disponibilidad`.
+4. Comprueba en **Explore AWS** que aparece como completada.
+:::
+
+::: nota Coste
+Cada petición gasta créditos según su longitud, pero no deja recursos que borrar.
+:::

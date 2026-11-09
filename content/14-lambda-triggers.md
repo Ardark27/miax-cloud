@@ -65,6 +65,12 @@ Si la función escribe en el mismo bucket que la dispara, se invocará sin fin. 
 
 ---
 
+# Cómo encaja S3 con Lambda
+
+![S3 notifica a Lambda, que usa su rol de ejecución](assets/img/14-lambda-triggers/push-s3-example-10.png)
+
+---
+
 # Demo: disparador S3
 
 ::: demo Conectar S3 con Lambda
@@ -76,6 +82,14 @@ Si la función escribe en el mismo bucket que la dispara, se invocará sin fin. 
 6. Añade al rol de la función acceso a S3.
 7. Sube un fichero y mira el log en CloudWatch.
 :::
+
+---
+
+# El disparador creado
+
+![Función con S3 como disparador](assets/img/14-lambda-triggers/s3.png) ![Detalle del disparador S3](assets/img/14-lambda-triggers/s3_2.png)
+
+<p class="pie">Captura de una versión anterior de la consola: la pantalla actual puede variar.</p>
 
 ---
 
@@ -98,6 +112,14 @@ El evento de una **HTTP API** (formato 2.0) incluye lo esencial:
   "body": null
 }
 ```
+
+---
+
+# API Gateway como disparador
+
+![Función con API Gateway como disparador](assets/img/14-lambda-triggers/api_1.png)
+
+<p class="pie">Captura de una versión anterior de la consola: la pantalla actual puede variar.</p>
 
 ---
 
@@ -179,4 +201,25 @@ df["VALOR"] = df["VALOR"].str.strip()  # los tickers traen espacios
 ::: ejercicio API HTTP
 1. Crea el método `suma` con Lambda y API Gateway.
 2. Pruébalo con parámetros correctos e incorrectos.
+:::
+
+---
+
+# Actividad de créditos: web con Lambda
+
+![Ficha de la actividad de crear una aplicación web con Lambda, con premio de 20 dólares](assets/img/14-lambda-triggers/actividad-creditos.png)
+
+---
+
+# Ejercicio: web con Lambda
+
+::: ejercicio Gana 20 $ con Lambda
+1. En la [consola](aws:home), abre **Explore AWS**, filtra por **Earn AWS credits**, elige **Creación de una aplicación web con AWS Lambda** y pulsa **Iniciar actividad**.
+2. Sigue sus pasos: crearás una función con una **Function URL**.
+3. Abre la URL en el navegador y comprueba que responde.
+4. Comprueba en **Explore AWS** que aparece como completada.
+:::
+
+::: limpieza Al terminar
+- Borra la función en [Lambda](aws:lambda): su URL puede ser accesible desde Internet.
 :::

@@ -25,18 +25,48 @@ Identidad :: usuario, grupo o rol -> Política :: documento JSON de permisos -> 
 | **Rol** | Identidad temporal que asume un servicio o persona | Rol de una Lambda |
 | **Política** | Permisos en JSON | `AdministratorAccess` |
 
+---
+
+# Una política por dentro
+
+Así es `AdministratorAccess`, la política del ejemplo:
+
 ```json
 {
   "Version": "2012-10-17",
   "Statement": [{
     "Effect": "Allow",
-    "Action": ["s3:GetObject"],
-    "Resource": "arn:aws:s3:::miax-{{alias}}-datos/*"
+    "Action": "*",
+    "Resource": "*"
   }]
 }
 ```
 
 **Mínimo privilegio**: concede solo lo necesario. En clase usamos permisos amplios por sencillez; en un trabajo real, no.
+
+---
+
+# Políticas en usuarios, grupos y roles
+
+**Personas: por grupos**, la forma recomendada
+
+::: flow
+Política :: AdministratorAccess -> Grupo :: administradores -> Usuario :: ana hereda los permisos
+:::
+
+**Directa a un usuario**: funciona, pero cuesta mantenerla
+
+::: flow
+Política :: lectura de un bucket -> Usuario :: ana
+:::
+
+**Servicios: por roles**, con una política de confianza que dice quién puede asumirlos
+
+::: flow
+Política :: qué puede hacer -> Rol :: sin claves fijas -> Servicio :: Lambda recibe credenciales temporales
+:::
+
+Los permisos se suman y un `Deny` explícito gana siempre.
 
 ---
 
@@ -58,6 +88,12 @@ En organizaciones grandes se usa IAM Identity Center y `aws sso login`.
 
 ---
 
+# Clave de acceso o contraseña
+
+![La clave de acceso da entrada al API y la contraseña a la consola](assets/img/03-iam-cli/key.png)
+
+---
+
 # Crear tu usuario de trabajo
 
 ::: demo Grupo y usuario administrador
@@ -74,7 +110,7 @@ En organizaciones grandes se usa IAM Identity Center y `aws sso login`.
 
 # AWS CLI
 
-Instala la [versión 2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html). Ya no se recomienda `pip install awscli`.
+Instala la [versión 2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html), no `pip install awscli`. Si `aws login` da `Invalid choice`, desinstala tu CLI antigua e instala la actual. Si tras instalarla no se reconoce `aws`, abre una terminal nueva.
 
 ```bash
 aws --version          # 2.32 o superior
@@ -139,6 +175,8 @@ Más información: [guía rápida de boto3](https://docs.aws.amazon.com/boto3/la
 La extensión **AWS Toolkit** permite explorar recursos sin salir del editor: S3, Lambda, CloudWatch y más.
 
 Ábrela desde el panel de extensiones y conéctate con las credenciales de tu perfil.
+
+![Extensión AWS Toolkit en VS Code](assets/img/03-iam-cli/extension.png)
 
 ---
 

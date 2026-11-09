@@ -8,6 +8,7 @@ Revisado el 8 de noviembre de 2026.
 |---|---|---|
 | Contenedores web | App Runner | ECS Express Mode (App Runner cerró a clientes nuevos el 30/04/2026) |
 | Capa gratuita | 12 meses | Créditos y plan gratuito o de pago (cuentas desde el 15/07/2025) |
+| Alta en AWS | No se explicaba | Sección en la Introducción con el registro avanzado; el registro nuevo de 2026 fija la región y no crea usuario raíz |
 | Sistema operativo | Amazon Linux 2, `yum`, `amazon-linux-extras` | Amazon Linux 2023, `dnf`, `systemctl` |
 | Instancia | `t2.micro` | `t3.micro` |
 | IP pública | Sin coste | 0,005 $/hora |
@@ -48,7 +49,7 @@ Revisado el 8 de noviembre de 2026.
 
 ## Decisiones de publicación
 
-- **Imágenes**: no se reutilizan. Varias eran de terceros y las capturas de la consola estaban desfasadas. Los diagramas se han redibujado y las capturas se sustituyen por enlaces directos.
+- **Imágenes**: se reutilizan las del original que siguen siendo correctas, en `assets/img/<lección>/`. Las capturas antiguas que aún sirven llevan un pie que lo indica. No se incluyen las que contradicen el contenido actual, las que muestran un ID de cuenta o una ruta personal, ni la que muestra a un ponente. Algunas proceden de terceros, como DigitalCloud y la documentación de AWS.
 - **Datos personales**: se han retirado el ID de cuenta, el nombre de host y las rutas personales que aparecían en el material.
 - **Datos de mercado**: `market_data.txt` y `market_data_proc.csv` se sirven desde este repositorio, en `market_data/`.
 - **DNI en Textract**: el ejemplo se ha cambiado por un documento genérico.

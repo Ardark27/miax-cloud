@@ -29,6 +29,8 @@
 
   const AWS_LINKS = {
     home: regional('console/home?region={r}'),
+    signup: () => 'https://signin.aws.amazon.com/signup?request_type=register',
+    mfa: global('iam/home#/security_credentials'),
     billing: global('billing/home#/'),
     budgets: global('billing/home#/budgets/overview'),
     freetier: global('billing/home#/freetier'),
@@ -64,6 +66,7 @@
     'dynamodb-create': regional('dynamodbv2/home?region={r}#create-table'),
     athena: regional('athena/home?region={r}#/query-editor'),
     textract: regional('textract/home?region={r}#/demo'),
+    rds: regional('rds/home?region={r}#databases:'),
   };
 
   // --- Estado ---------------------------------------------------------------
@@ -414,6 +417,20 @@
     if (state.lesson) renderLesson();
   }
 
+  function openHelp() {
+    const account = /^\d{12}$/.test(settings.account) ? `${settings.account}.` : '';
+    $('help-console').href = `https://${account}signin.aws.amazon.com/console`;
+    $('dlg-help').showModal();
+  }
+
+  function openImage(source) {
+    const big = $('dlg-image-img');
+    big.src = source.currentSrc || source.src;
+    big.alt = source.alt;
+    big.style.setProperty('--ratio', source.naturalWidth / source.naturalHeight || 1);
+    $('dlg-image').showModal();
+  }
+
   function bindEvents() {
     window.addEventListener('hashchange', route);
     if (channel) {
@@ -426,7 +443,7 @@
     $('btn-mode').addEventListener('click', toggleMode);
     $('btn-float').addEventListener('click', openFloat);
     $('btn-theme').addEventListener('click', toggleTheme);
-    $('btn-help').addEventListener('click', () => $('dlg-help').showModal());
+    $('btn-help').addEventListener('click', openHelp);
     $('btn-prev').addEventListener('click', () => step(-1));
     $('btn-next').addEventListener('click', () => step(1));
     $('slide-index').addEventListener('change', (e) => {
@@ -437,7 +454,11 @@
       if ($('dlg-settings').returnValue === 'ok') applySettings();
     });
 
+    $('dlg-image').addEventListener('click', () => $('dlg-image').close());
+
     main.addEventListener('click', async (e) => {
+      const image = e.target.closest('.slide img');
+      if (image && !image.closest('a')) { openImage(image); return; }
       const button = e.target.closest('.copy');
       if (!button) return;
       const code = button.parentElement.querySelector('code').textContent;
@@ -469,7 +490,7 @@
           else document.documentElement.requestFullscreen();
           break;
         case 'Escape': location.hash = '#/'; break;
-        case '?': $('dlg-help').showModal(); break;
+        case '?': openHelp(); break;
         default:
       }
     });

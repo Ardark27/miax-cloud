@@ -24,6 +24,12 @@ Tu porción aislada de la red de AWS.
 
 ---
 
+# Una VPC por dentro
+
+![VPC con dos subredes, puerta de enlace a Internet y tabla de rutas](assets/img/04-vpc/vpc.png)
+
+---
+
 # Subred pública y privada
 
 | | Pública | Privada |
@@ -36,6 +42,19 @@ Una subred privada puede salir a Internet con un **NAT Gateway**, que tiene cost
 
 ---
 
+# Servicios públicos y privados
+
+- **Públicos**: tienen un endpoint accesible desde Internet, como S3 o DynamoDB. Eso no significa que tus datos sean públicos: siguen protegidos por IAM.
+- **Privados**: viven dentro de tu red (VPC), como una instancia EC2 o una base de datos RDS.
+
+---
+
+# Dentro y fuera de la VPC
+
+![Servicios públicos fuera de la VPC y privados dentro](assets/img/04-vpc/public.png)
+
+---
+
 # Acceso a S3 desde una VPC
 
 ::: flow
@@ -43,6 +62,12 @@ EC2 en subred privada -> Gateway Endpoint :: sin coste -> Amazon S3
 :::
 
 Un **Gateway Endpoint** lleva el tráfico a S3 o DynamoDB por la red de AWS, sin pasar por Internet ni por un NAT Gateway.
+
+---
+
+# Endpoint de S3
+
+![Acceso a S3 por Internet o por un endpoint de puerta de enlace](assets/img/04-vpc/s3.png)
 
 ---
 

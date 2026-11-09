@@ -30,6 +30,12 @@ Internet -> ALB público :: subredes públicas -> Aplicación :: subredes privad
 
 ---
 
+# Balanceador público e interno
+
+![Balanceador de cara a Internet](assets/img/29-alb-apigw/internet_facing_load_balancer.png) ![Balanceador interno entre subredes privadas](assets/img/29-alb-apigw/internal_load_balancer.png)
+
+---
+
 # Amazon API Gateway
 
 Crea, publica, supervisa y protege API.
@@ -49,3 +55,9 @@ Cliente -> API Gateway :: autorización, límites -> Lambda u otro backend
 2. Abre la HTTP API creada con la función de suma.
 3. Revisa rutas, integraciones y stages.
 :::
+
+---
+
+# Cómo funciona API Gateway
+
+![Clientes, API Gateway y servicios de destino](assets/img/29-alb-apigw/API-Gateway-How-Works.png)

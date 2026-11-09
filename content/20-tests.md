@@ -43,6 +43,12 @@ Documentación: [pytest](https://docs.pytest.org/en/stable/).
 
 ---
 
+# Panel de tests
+
+![Panel Testing de VS Code con los tests superados](assets/img/20-tests/tests_vscode.png)
+
+---
+
 # Probar un API
 
 ```python
@@ -68,6 +74,12 @@ def test_suma():
 ::: flow
 Rojo :: escribe un test que falla -> Verde :: código mínimo que pasa -> Refactor :: mejora sin romper
 :::
+
+---
+
+# El ciclo de TDD
+
+![Escribir test, ver que falla, escribir código, ver que pasa y refactorizar](assets/img/20-tests/tdd.png)
 
 ---
 

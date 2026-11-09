@@ -20,6 +20,12 @@ VS Code Server puede quedarse justo en 1 GB de RAM. Si `t3.micro` va lenta, usa 
 
 ---
 
+# Arquitectura de Remote - SSH
+
+![VS Code local conectado por túnel SSH a VS Code Server en la máquina remota](assets/img/07-vscode/architecture-ssh.png)
+
+---
+
 # Preparar la instancia
 
 ::: demo Instancia lista para SSH
@@ -55,6 +61,24 @@ Host aws-ec2
 | `HostName` | IP o DNS público de la instancia |
 | `User` | Usuario de la máquina |
 | `IdentityFile` | Ruta a la clave privada |
+
+---
+
+# Instalar y abrir la paleta
+
+![Extensión Remote - SSH](assets/img/07-vscode/ext.png) ![Indicador remoto de la barra de estado](assets/img/07-vscode/2.png) ![Comandos Remote-SSH en la paleta](assets/img/07-vscode/3.png) ![Diálogo para añadir un host SSH](assets/img/07-vscode/add_ssh.png)
+
+---
+
+# Conectar con el host
+
+![Selección del host aws-ec2](assets/img/07-vscode/sechost.png) ![Barra de estado conectada a aws-ec2](assets/img/07-vscode/win.png)
+
+---
+
+# Abrir la carpeta remota
+
+![Botón Open Folder con la sesión remota abierta](assets/img/07-vscode/open_folder.png) ![Panel Remote Explorer con el host aws-ec2](assets/img/07-vscode/ssh_target.png)
 
 ---
 

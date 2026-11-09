@@ -18,6 +18,12 @@ Desde 2023 Terraform usa la licencia BSL en vez de una licencia de código abier
 
 ---
 
+# Terraform y los proveedores
+
+![Terraform usa un proveedor para llamar al API de destino](assets/img/27-terraform/tf2.png)
+
+---
+
 # Ciclo de trabajo
 
 ::: flow
@@ -33,6 +39,12 @@ terraform plan
 terraform apply
 terraform destroy
 ```
+
+---
+
+# Write, plan y apply
+
+![Escribir la configuración, revisar el plan y aplicar los cambios](assets/img/27-terraform/tf1.png)
 
 ---
 
