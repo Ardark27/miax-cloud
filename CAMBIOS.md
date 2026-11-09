@@ -50,7 +50,7 @@ Revisado el 8 de noviembre de 2026.
 
 - **Imágenes**: no se reutilizan. Varias eran de terceros y las capturas de la consola estaban desfasadas. Los diagramas se han redibujado y las capturas se sustituyen por enlaces directos.
 - **Datos personales**: se han retirado el ID de cuenta, el nombre de host y las rutas personales que aparecían en el material.
-- **Datos de mercado**: no se duplican; se enlazan al repositorio original.
+- **Datos de mercado**: `market_data.txt` y `market_data_proc.csv` se sirven desde este repositorio, en `market_data/`.
 - **DNI en Textract**: el ejemplo se ha cambiado por un documento genérico.
 
 ## Pendiente de comprobar con sesión iniciada

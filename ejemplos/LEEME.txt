@@ -11,5 +11,4 @@ github-actions/   Workflows de integración y despliegue
 terraform/        Bucket, EC2, DynamoDB, ECS Express Mode y Lambda
 
 Sustituye TU_CUENTA, TU_ALIAS y la región por tus valores.
-Los datos de mercado están en:
-https://github.com/fernandodelacalle/miax-aws/tree/main/market_data
+Los datos de mercado están en la carpeta market_data/ de este repositorio.

@@ -66,7 +66,7 @@ Si `dnf` no encuentra `htop`, prueba `top`, que ya viene instalado.
 :::
 
 ::: ejercicio Transferir ficheros
-1. Descarga [market_data_proc.csv](https://github.com/fernandodelacalle/miax-aws/blob/main/market_data/market_data_proc.csv).
+1. Descarga [market_data_proc.csv](market_data/market_data_proc.csv).
 2. Súbelo a la instancia con `scp`.
 3. Edítalo en la instancia y tráelo de vuelta.
 :::

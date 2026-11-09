@@ -109,7 +109,7 @@ En `market_data_proc.csv` hay 16.769 filas, pero solo 8.544 combinaciones distin
 
 ::: ejercicio Market data en DynamoDB
 1. Crea la tabla `MARKET_DATA`: `VALOR` como partición y `TIME_ID` como ordenación.
-2. Descarga [market_data_proc.csv](https://github.com/fernandodelacalle/miax-aws/blob/main/market_data/market_data_proc.csv).
+2. Descarga [market_data_proc.csv](market_data/market_data_proc.csv).
 3. Carga las filas con `batch_writer` y `TIME_ID` como `TIME#000123`.
 4. Lee las operaciones del Santander (`SAN`) con paginación.
 5. Comprueba que llegan las 9.585 filas.
