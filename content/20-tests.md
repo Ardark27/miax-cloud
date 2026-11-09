@@ -33,6 +33,16 @@ Documentación: [pytest](https://docs.pytest.org/en/stable/).
 - La pestaña **Testing** detecta tus tests.
 - Permite ejecutar uno concreto y depurarlo con puntos de ruptura.
 
+---
+
+# Panel de tests
+
+![Panel Testing de VS Code con los tests superados](assets/img/20-tests/tests_vscode.png)
+
+---
+
+# Ejercicio: primeros tests
+
 ::: ejercicio Primeros tests
 1. Ejecuta los tests de [ejemplos/tests/ejemplo_1](ejemplos/LEEME.txt).
 2. Cambia `my_module.py` y mira qué ocurre.
@@ -40,12 +50,6 @@ Documentación: [pytest](https://docs.pytest.org/en/stable/).
 4. Añade un test nuevo.
 5. Depura un test.
 :::
-
----
-
-# Panel de tests
-
-![Panel Testing de VS Code con los tests superados](assets/img/20-tests/tests_vscode.png)
 
 ---
 
@@ -95,6 +99,10 @@ ruff check .          # busca problemas
 ruff check . --fix    # corrige los automáticos
 ruff format .         # formatea
 ```
+
+---
+
+# Ejercicio: limpia el código
 
 ::: ejercicio Limpia el código
 1. Instala Ruff en tu entorno virtual.

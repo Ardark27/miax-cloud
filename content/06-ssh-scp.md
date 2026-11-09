@@ -61,7 +61,7 @@ scp -i miax.pem ec2-user@IP_PUBLICA:~/datos.txt ./
 
 ---
 
-# Ejercicio
+# Ejercicio: conectar por SSH
 
 ::: ejercicio Conectar
 1. Conéctate a tu instancia por SSH.
@@ -72,6 +72,10 @@ scp -i miax.pem ec2-user@IP_PUBLICA:~/datos.txt ./
 ::: nota htop en AL2023
 Si `dnf` no encuentra `htop`, prueba `top`, que ya viene instalado.
 :::
+
+---
+
+# Ejercicio: transferir ficheros
 
 ::: ejercicio Transferir ficheros
 1. Descarga [market_data_proc.csv](market_data/market_data_proc.csv).

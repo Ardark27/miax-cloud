@@ -19,10 +19,6 @@ EventBridge Scheduler :: una vez al día -> Lambda -> BCE :: tipos de cambio -> 
 6. Pon todo en un repositorio Git con despliegue automático por OIDC.
 :::
 
-::: nota Variante
-Haz lo mismo con los datos de cierre del IBEX desde el API de BME.
-:::
-
 ---
 
 # Caso de uso 2: documentos

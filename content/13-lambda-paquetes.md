@@ -158,7 +158,7 @@ def lambda_handler(event, context):
 
 ---
 
-# Ejercicios
+# Ejercicio: función con pandas
 
 ::: ejercicio Función con pandas
 1. Crea una función que use pandas.
@@ -168,10 +168,15 @@ def lambda_handler(event, context):
 5. Sube el timeout y la memoria, y pruébala.
 :::
 
-::: ejercicio Datos desde el API de BME
-1. Crea una función que descargue datos del Santander desde el API de los algoritmos de BME.
-2. Empaqueta las librerías necesarias.
-3. Guarda el API key en una variable de entorno.
-4. Guarda un CSV en S3 llamado `Santander_{HH_MM_SS_DD_MM_YYYY}.csv`.
-5. Añade al rol los permisos necesarios.
+---
+
+# Ejercicio: resumen de market data
+
+::: ejercicio Resumen de market data
+1. Sube [market_data_proc.csv](market_data/market_data_proc.csv) a tu bucket.
+2. Crea una función que lea el fichero desde S3 con pandas, reutilizando el paquete del ejercicio anterior.
+3. Calcula por `VALOR` el número de operaciones, el volumen total y el precio medio.
+4. Pasa el nombre del bucket en una variable de entorno.
+5. Guarda el resultado en S3 como `resumen_{HH_MM_SS_DD_MM_YYYY}.csv`.
+6. Añade al rol los permisos necesarios y comprueba que `SAN` tiene 9.585 operaciones.
 :::
