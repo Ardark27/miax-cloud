@@ -13,6 +13,8 @@ Extraer texto, tablas y formularios de PDF e imágenes.
 | **Analyze Expense** | Facturas y recibos |
 | **Analyze ID** | Documentos de identidad |
 
+Se invoca desde Python y devuelve JSON con el contenido del documento. Documentación: [qué es Textract](https://docs.aws.amazon.com/textract/latest/dg/what-is.html) y [análisis de documentos](https://docs.aws.amazon.com/textract/latest/dg/analyzing-document-text.html).
+
 ::: nota Capa gratuita
 Solo tres meses para clientes nuevos: 1.000 páginas al mes con Detect Document Text y 100 con tablas o formularios. [Precios](https://aws.amazon.com/textract/pricing/).
 :::
@@ -73,7 +75,23 @@ for bloque in resultado["Blocks"]:
 
 Si hay muchos resultados, sigue `NextToken`. En producción, usa una notificación de SNS en lugar de consultar en bucle.
 
-Formato de salida: [objeto Block](https://docs.aws.amazon.com/textract/latest/dg/API_Block.html).
+Formato de salida: [objeto Block](https://docs.aws.amazon.com/textract/latest/dg/API_Block.html). Hay un PDF de ejemplo y su salida en [ejemplos/textract/salida](ejemplos/LEEME.txt).
+
+---
+
+# Tablas y formularios, con salida a S3
+
+```python
+textract.start_document_analysis(
+    DocumentLocation={
+        "S3Object": {"Bucket": "miax-{{alias}}-datos", "Name": "documento.pdf"}
+    },
+    FeatureTypes=["TABLES", "FORMS"],
+    OutputConfig={"S3Bucket": "miax-{{alias}}-datos", "S3Prefix": "textract/"},
+)
+```
+
+Con `OutputConfig`, Textract guarda además el JSON del resultado en el bucket indicado.
 
 ---
 

@@ -63,10 +63,6 @@ Estos datos no salen de tu navegador.
 - Borra lo que siga costando dinero.
 :::
 
-::: novedad Cambio reciente
-Lo que ha cambiado en AWS y conviene conocer.
-:::
-
 ---
 
 # Qué necesitas instalar
@@ -74,7 +70,7 @@ Lo que ha cambiado en AWS y conviene conocer.
 - [VS Code](https://code.visualstudio.com/) con la extensión **Remote - SSH**.
 - [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html), versión 2.32 o superior.
 - [Python 3.13 o 3.14](https://www.python.org/downloads/) y [Git](https://git-scm.com/).
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/), o Docker en una instancia EC2.
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/), o Docker en una instancia EC2. Paso a paso: [Docker en tu ordenador](#/15a-docker-local).
 - [Terraform](https://developer.hashicorp.com/terraform/install) para el módulo final.
 
 El código de los ejemplos está en la carpeta [ejemplos](ejemplos/LEEME.txt).

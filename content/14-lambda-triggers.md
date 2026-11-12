@@ -4,11 +4,17 @@ Las tres formas de invocar funciones que más usaremos.
 
 ---
 
+# Qué puede invocar una función
+
+![Lista de servicios disponibles como disparador de Lambda](assets/img/14-lambda-triggers/events.png)
+
+<p class="pie">Captura de una versión anterior de la consola: la lista actual es más larga. Veremos EventBridge, S3 y API Gateway.</p>
+
+---
+
 # Programar con EventBridge Scheduler
 
-::: novedad Mejor que las reglas programadas
-EventBridge Scheduler es la opción que recomienda AWS: admite zonas horarias, ejecuciones únicas y escala mucho mejor.
-:::
+EventBridge Scheduler es el servicio de AWS para ejecutar tareas programadas. Admite zonas horarias y ejecuciones únicas.
 
 Expresiones de frecuencia o cron:
 
@@ -16,6 +22,8 @@ Expresiones de frecuencia o cron:
 rate(1 minute)
 cron(0 8 ? * MON-FRI *)
 ```
+
+Referencia: [tipos de programación](https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html).
 
 ::: aviso El cron de AWS tiene seis campos
 `minuto hora día-mes mes día-semana año`. Uno de los dos campos de día debe ser `?`. Es distinto del crontab de Linux.
@@ -62,6 +70,34 @@ def lambda_handler(event, context):
 ::: aviso Bucles infinitos y facturas
 Si la función escribe en el mismo bucket que la dispara, se invocará sin fin. Usa **otro bucket**, o un prefijo distinto y filtros.
 :::
+
+---
+
+# El evento de S3
+
+```json
+{
+  "Records": [{
+    "eventSource": "aws:s3",
+    "awsRegion": "{{region}}",
+    "eventTime": "1970-01-01T00:00:00.000Z",
+    "eventName": "ObjectCreated:Put",
+    "s3": {
+      "bucket": {
+        "name": "miax-{{alias}}-entrada",
+        "arn": "arn:aws:s3:::miax-{{alias}}-entrada"
+      },
+      "object": {
+        "key": "market_data.txt",
+        "size": 1024,
+        "eTag": "0123456789abcdef0123456789abcdef"
+      }
+    }
+  }]
+}
+```
+
+Nos interesan sobre todo `bucket.name` y `object.key`.
 
 ---
 
@@ -125,7 +161,7 @@ El evento de una **HTTP API** (formato 2.0) incluye lo esencial:
 
 # El API de suma, sin servidor
 
-Los parámetros llegan como texto y `body` debe ser una cadena:
+Los parámetros llegan como texto y `body` debe ser una cadena ([integración de Lambda con HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html)):
 
 ```python
 import json
@@ -177,6 +213,8 @@ aws lambda create-function \
 
 # Ejercicio: procesar ficheros
 
+Descarga los datos: [market_data.txt](market_data/market_data.txt) (32 MB).
+
 ::: ejercicio Procesar market data
 1. Crea buckets de entrada y salida, y el disparador S3.
 2. Lee el fichero `market_data.txt` subido.
@@ -184,6 +222,20 @@ aws lambda create-function \
 4. Escribe un CSV con las columnas `VALOR,VOLUMEN,PRECIO,TIME` en el bucket de salida.
 5. Ajusta memoria y timeout.
 :::
+
+Prueba primero el código en local. El fichero de entrada va separado por `;` y tiene muchas más columnas:
+
+```text
+FECHA;SECUENCIA;VALOR;VOLUMEN;PRECIO;...;HORAEJEC;...
+20180319;2119807;A3M     ;2;7.7000;...;09:00:18.002;...
+```
+
+La salida debe quedar así:
+
+```text
+VALOR,VOLUMEN,PRECIO,TIME
+SAN,1,5.41,2018-03-19 09:00:18.002
+```
 
 ```python
 df = pd.read_csv(

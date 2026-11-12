@@ -21,12 +21,16 @@
     { "title": "Almacenamiento: S3", "summary": "Buckets y objetos desde la consola, la CLI, boto3 y pandas.", "lessons": [
       { "id": "11-s3", "title": "Amazon S3" }
     ]},
+    { "title": "Caso de uso: Streamlit", "summary": "Aplicaciones web de datos en Python, publicadas en EC2 con los datos en S3.", "lessons": [
+      { "id": "11b-streamlit", "title": "Aplicaciones de datos con Streamlit" }
+    ]},
     { "title": "Serverless: Lambda", "summary": "Funciones, empaquetado y disparadores.", "lessons": [
       { "id": "12-lambda", "title": "Primeros pasos con Lambda" },
       { "id": "13-lambda-paquetes", "title": "Empaquetado y buenas prácticas" },
       { "id": "14-lambda-triggers", "title": "Disparadores: cron, S3 y HTTP" }
     ]},
     { "title": "Contenedores en AWS", "summary": "Docker, registro de imágenes y despliegue.", "lessons": [
+      { "id": "15a-docker-local", "title": "Docker en tu ordenador" },
       { "id": "15-docker-ec2", "title": "Docker en EC2" },
       { "id": "16-ecr", "title": "Amazon ECR" },
       { "id": "17-ecs-express", "title": "ECS Express Mode" },
@@ -54,6 +58,9 @@
     ]},
     { "title": "Anexo", "summary": "Material complementario.", "lessons": [
       { "id": "29-alb-apigw", "title": "Load Balancer y API Gateway" }
+    ]},
+    { "title": "Extra", "summary": "Bases de Docker, para quien no lo haya usado nunca.", "lessons": [
+      { "id": "30-docker-basico", "title": "Cómo usar Docker" }
     ]}
   ]
 }

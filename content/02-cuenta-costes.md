@@ -18,11 +18,9 @@ Antes de crear nada: saber qué se paga y cómo enterarse a tiempo.
 
 ---
 
-# La capa gratuita ha cambiado
+# La capa gratuita
 
-::: novedad Cuentas creadas desde el 15 de julio de 2025
-Ya no hay 12 meses de uso gratuito limitado por servicio. Ahora funciona con **créditos**.
-:::
+La capa gratuita funciona con **créditos**. Al crear la cuenta eliges entre dos planes:
 
 | | Plan gratuito | Plan de pago |
 |---|---|---|
@@ -55,6 +53,8 @@ Las dos herramientas actuales para no llevarse sustos:
 - **CloudWatch**: permite alarmas sobre cualquier métrica, incluida la facturación.
 
 Crearás tu presupuesto en el último ejercicio de esta lección.
+
+Activa también las **alertas de la capa gratuita**: en [Facturación](aws:billing) → **Billing preferences** → **Alert preferences**, marca **Receive AWS Free Tier alerts**. Te avisan por correo cuando te acercas al límite gratuito de un servicio.
 
 ::: demo Revisar créditos y gasto
 1. Abre [Facturación](aws:billing) y revisa el gasto del mes.

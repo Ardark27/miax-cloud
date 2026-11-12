@@ -38,7 +38,11 @@ Internet -> ALB público :: subredes públicas -> Aplicación :: subredes privad
 
 # Amazon API Gateway
 
-Crea, publica, supervisa y protege API.
+Crea, publica, supervisa y protege API:
+
+- Basadas en HTTP, sin estado entre cliente y servidor.
+- Con los métodos estándar: GET, POST, PUT, PATCH y DELETE.
+- Junto con Lambda, forma la parte de cara a la aplicación de la arquitectura sin servidor de AWS.
 
 ::: flow
 Cliente -> API Gateway :: autorización, límites -> Lambda u otro backend

@@ -6,6 +6,8 @@ La red de seguridad que permite automatizar despliegues.
 
 # pytest
 
+Si un código va a estar en servicio mucho tiempo y lo vamos a cambiar, necesitamos tests unitarios y funcionales que avisen cuando algo se rompe.
+
 ```bash
 pip install pytest
 pytest
@@ -24,7 +26,7 @@ def test_resta():
     assert my_module.resta(2, 2) == 0
 ```
 
-Documentación: [pytest](https://docs.pytest.org/en/stable/).
+Documentación: [pytest](https://docs.pytest.org/en/stable/) y [más formas de usar `assert`](https://docs.pytest.org/en/stable/how-to/assert.html).
 
 ---
 
@@ -47,8 +49,10 @@ Documentación: [pytest](https://docs.pytest.org/en/stable/).
 1. Ejecuta los tests de [ejemplos/tests/ejemplo_1](ejemplos/LEEME.txt).
 2. Cambia `my_module.py` y mira qué ocurre.
 3. Ejecútalos desde VS Code.
-4. Añade un test nuevo.
+4. Añade un test nuevo y ejecútalos todos.
 5. Depura un test.
+
+Puedes hacerlo en tu ordenador o copiar los ficheros a tu instancia EC2.
 :::
 
 ---
@@ -89,9 +93,7 @@ Rojo :: escribe un test que falla -> Verde :: código mínimo que pasa -> Refact
 
 # Linter y formato: Ruff
 
-::: novedad Ruff sustituye a flake8
-[Ruff](https://docs.astral.sh/ruff/) aplica las mismas reglas que flake8, mucho más rápido, y además formatea el código.
-:::
+[Ruff](https://docs.astral.sh/ruff/) revisa el código en busca de errores y problemas de estilo, y además lo formatea. Es muy rápido.
 
 ```bash
 pip install ruff

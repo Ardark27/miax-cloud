@@ -76,6 +76,8 @@ uv pip install fastapi uvicorn
 uvicorn app:app --host 0.0.0.0 --port 8080
 ```
 
+`app:app` significa fichero `app.py`, objeto `app`. `--host 0.0.0.0` acepta conexiones desde fuera de la máquina.
+
 ::: limpieza Al acabar
 - Para el servidor con <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 - [Termina la instancia](aws:ec2-instances) si no vas a seguir usándola.

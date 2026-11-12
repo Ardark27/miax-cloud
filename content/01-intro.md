@@ -6,15 +6,22 @@ Qué es, cómo se organiza físicamente y qué modelos de servicio ofrece.
 
 # AWS en contexto
 
-- **2002**: primeros servicios para desarrolladores.
+- **2002**: primeros servicios para desarrolladores, de uso interno.
+- **2004**: lanzamiento público.
 - **2006**: lanzamiento de S3 y EC2, el origen de la nube actual.
+- **2010**: todo amazon.com funciona sobre AWS.
 - **Hoy**: más de 200 servicios.
 - **Ingresos**: unos 46.000 M$ solo en el tercer trimestre de 2026.
 - **Cuota de mercado**: líder con cerca del 26 %, por delante de Microsoft (19 %) y Google (16 %), según Synergy Research.
+- **Tendencia**: el mercado crece un 55 % anual, impulsado por la IA, y aparecen los llamados *neoclouds*, especializados en GPU.
 
-::: novedad Un mercado que cambia
-La cuota de AWS baja mientras el mercado crece un 55 % anual, impulsado por la IA. La oferta de la nube ya incluye a los llamados *neoclouds*, especializados en GPU.
-:::
+---
+
+# Más de 200 servicios
+
+![Tabla periódica de los servicios de AWS, agrupados por categoría](assets/img/01-intro/aws_periodic.jpg)
+
+<p class="pie">Ilustración de @awsgeek. No incluye los servicios más recientes.</p>
 
 ---
 
@@ -31,6 +38,9 @@ La cuota de AWS baja mientras el mercado crece un 55 % anual, impulsado por la I
 
 - **Región**: área geográfica independiente y aislada del resto.
 - **Zona de disponibilidad (AZ)**: ubicación aislada dentro de la región, unida a las demás por una red redundante de baja latencia.
+- Al lanzar un recurso puedes elegir la zona o dejar que AWS la elija.
+- Las regiones están aisladas entre sí para tolerar fallos, y se unen por una red de gran ancho de banda y redundante.
+- Además existen **Local Zones** (cerca de grandes ciudades), **Outposts** (hardware de AWS en tu centro de datos) y **Wavelength** (dentro de redes 5G).
 
 ---
 

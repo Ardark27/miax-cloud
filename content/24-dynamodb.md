@@ -42,9 +42,7 @@ En DynamoDB se modela la tabla a partir de cómo se va a leer.
 
 # Modo de capacidad
 
-::: novedad Bajo demanda es la opción recomendada
-Es el modo por defecto en la consola y se ajusta solo. Se abarató un 50 % en noviembre de 2024. No hay que decidir unidades de lectura y escritura.
-:::
+Usaremos el modo **bajo demanda**: es el modo por defecto en la consola, se ajusta solo y no hay que decidir unidades de lectura y escritura.
 
 ```python
 import boto3

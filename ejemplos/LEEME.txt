@@ -6,9 +6,12 @@ tests/            Ejemplos de pytest
 s3/               Notebook de boto3 y pandas
 dynamodb/         Creación, carga y lectura de MARKET_DATA
 athena/           Consulta desde Python
-textract/         Análisis asíncrono de un PDF
+textract/         Análisis asíncrono de un PDF; en salida/, un PDF y su resultado en JSON
+streamlit/        Ejemplos de Streamlit (01 a 05), panel sobre S3 y servicio para EC2
 github-actions/   Workflows de integración y despliegue
 terraform/        Bucket, EC2, DynamoDB, ECS Express Mode y Lambda
+
+Las soluciones paso a paso de los ejercicios se publican en ejercicios/ al terminar cada clase.
 
 Sustituye TU_CUENTA, TU_ALIAS y la región por tus valores.
 Los datos de mercado están en la carpeta market_data/ de este repositorio.

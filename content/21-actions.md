@@ -19,7 +19,11 @@ Evento :: push, PR, cron -> Workflow -> Job :: en un runner -> Steps -> Actions 
 | **Action** | Bloque reutilizable |
 | **Runner** | Máquina de ejecución, de GitHub o tuya |
 
-Los workflows viven en `.github/workflows/`.
+Los workflows viven en `.github/workflows/` y se escriben en [YAML](https://yaml.org/spec/1.2.2/).
+
+- Se lanzan por eventos del repositorio (un push a una rama, un pull request), de forma periódica o por eventos externos.
+- Al terminar, GitHub muestra en el commit o en el pull request si todo ha ido bien.
+- Los runners pueden ser de GitHub o máquinas propias.
 
 ---
 
@@ -55,11 +59,9 @@ jobs:
       - run: pytest
 ```
 
-::: novedad Cambios respecto a versiones antiguas
-- Actualiza las actions: las versiones viejas pierden soporte.
-- `::set-output` está obsoleto. Se escribe en el fichero `$GITHUB_OUTPUT`.
-- Los workflows deben pedir solo los permisos necesarios con `permissions`.
-:::
+- Usa versiones actuales de las actions: las antiguas pierden soporte.
+- Para pasar valores entre pasos se escribe en el fichero `$GITHUB_OUTPUT`.
+- Pide solo los permisos necesarios con `permissions`.
 
 ---
 

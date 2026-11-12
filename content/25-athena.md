@@ -35,7 +35,7 @@ aws s3 mb s3://miax-{{alias}}-athena-resultados --region {{region}}
 
 # Crear la tabla
 
-Antes eran varias pantallas de asistente. Con SQL se reproduce exactamente:
+Creamos la base de datos y la tabla con SQL:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS miax;

@@ -10,9 +10,7 @@ Cada `git push` a `main` construye la imagen y actualiza la función.
 git push -> Actions :: se autentica con OIDC -> docker build -> ECR -> Lambda :: nueva imagen
 :::
 
-::: novedad Sin claves guardadas en GitHub
-Antes se guardaban `AWS_ACCESS_KEY_ID` y `AWS_SECRET_ACCESS_KEY` como secretos. Con **OIDC**, GitHub obtiene credenciales temporales de un rol. No hay nada que pueda filtrarse.
-:::
+Con **OIDC**, GitHub obtiene credenciales temporales de un rol de AWS. No se guardan claves en GitHub, así que no hay nada que pueda filtrarse.
 
 ---
 
@@ -33,6 +31,10 @@ Antes se guardaban `AWS_ACCESS_KEY_ID` y `AWS_SECRET_ACCESS_KEY` como secretos. 
 4. Audience: `sts.amazonaws.com`
 5. Pulsa **Add provider**.
 :::
+
+---
+
+# Rol para GitHub
 
 ::: demo Crear el rol para GitHub
 1. Abre [Roles](aws:iam-roles) → **Create role** → **Web identity**.

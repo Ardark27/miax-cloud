@@ -6,9 +6,7 @@ Una alternativa si no puedes instalar Docker en tu ordenador.
 
 # Instalación en Amazon Linux 2023
 
-::: novedad Los comandos han cambiado
-`yum` y `amazon-linux-extras` eran de Amazon Linux 2. En AL2023 se usa `dnf` y `systemctl`.
-:::
+En Amazon Linux 2023 los paquetes se instalan con `dnf` y los servicios se gestionan con `systemctl`. Si en algún tutorial ves `yum` o `amazon-linux-extras`, es para Amazon Linux 2.
 
 ```bash
 sudo dnf update -y

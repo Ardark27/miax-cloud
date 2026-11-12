@@ -46,6 +46,7 @@ Revisado el 8 de noviembre de 2026.
 - P5 son GPU H100, no V100.
 - ECS Express comprueba `/` por defecto: se añade `/health` al API.
 - Cron no viene instalado en Amazon Linux 2023.
+- `pip --platform manylinux2014_x86_64` ya no encuentra pandas ni numpy para Python 3.14. Se usa `manylinux_2_28_x86_64`.
 
 ## Decisiones de publicación
 
@@ -53,6 +54,8 @@ Revisado el 8 de noviembre de 2026.
 - **Datos personales**: se han retirado el ID de cuenta, el nombre de host y las rutas personales que aparecían en el material.
 - **Datos de mercado**: `market_data.txt` y `market_data_proc.csv` se sirven desde este repositorio, en `market_data/`.
 - **DNI en Textract**: el ejemplo se ha cambiado por un documento genérico.
+- **Soluciones**: los ejercicios largos tienen una resolución paso a paso en `ejercicios/`. Se publica al terminar cada clase, con su enlace en la diapositiva. El proyecto final no tiene solución.
+- **Caso de uso de Streamlit**: módulo nuevo tras S3, que no procede del material original. Empieza con ejemplos en local y termina publicando el panel en EC2 con los datos en S3.
 
 ## Pendiente de comprobar con sesión iniciada
 

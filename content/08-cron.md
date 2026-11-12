@@ -74,9 +74,10 @@ En crontab el símbolo `%` tiene un significado especial, por eso se escribe `\%
 2. Crea una carpeta y un entorno virtual: `python3 -m venv .venv`.
 3. Instala pandas en el entorno.
 4. Escribe un programa que use pandas e imprima la hora actual.
-5. Prográmalo cada minuto con crontab, llamando al Python del entorno.
-6. Guarda la salida en un fichero de log.
-7. Comprueba los logs y borra la tarea con `crontab -e`.
+5. Crea un script `my_script.sh` que active el entorno y ejecute el programa. Dale permisos con `chmod +x my_script.sh` y pruébalo con `./my_script.sh`.
+6. Prográmalo cada minuto con crontab (`* * * * *`).
+7. Guarda la salida en un fichero de log.
+8. Comprueba los logs y borra la tarea con `crontab -e`.
 :::
 
 Más adelante haremos lo mismo sin servidor, con Lambda y EventBridge Scheduler.

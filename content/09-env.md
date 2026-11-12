@@ -4,6 +4,13 @@ Configurar programas sin escribir valores dentro del código.
 
 ---
 
+# Qué son
+
+- Variables con nombre que el sistema pasa a cada programa que se ejecuta y que pueden cambiar su comportamiento.
+- Uso típico: configuración y secretos, como contraseñas o claves de API, fuera del código.
+
+---
+
 # En bash
 
 ```bash
@@ -12,7 +19,7 @@ env               # ver todas
 export API_KEY=valor   # disponible para los programas que lances
 ```
 
-Sin `export`, la variable solo existe en la shell actual y no la heredan los programas.
+Con `VARIABLE=valor`, sin `export`, la variable solo existe en la shell actual y no la heredan los programas.
 
 Para que estén siempre disponibles, añade la línea `export` a `~/.bashrc`.
 

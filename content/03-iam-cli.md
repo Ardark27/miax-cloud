@@ -72,9 +72,7 @@ Los permisos se suman y un `Deny` explícito gana siempre.
 
 # Autenticación
 
-::: novedad Evita las claves de acceso permanentes
-Desde noviembre de 2025 `aws login` permite usar tus credenciales de la consola en la CLI y los SDK, con credenciales temporales.
-:::
+`aws login` te permite usar en la CLI y los SDK las mismas credenciales que en la consola. Genera credenciales temporales, así que no necesitas claves de acceso permanentes.
 
 | Método | Uso | Recomendación |
 |---|---|---|

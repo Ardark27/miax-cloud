@@ -22,8 +22,6 @@ Para salir: `exit` o <kbd>Ctrl</kbd>+<kbd>D</kbd>.
 
 ![Pestaña SSH client del diálogo Connect de EC2](assets/img/06-ssh-scp/ec2_2.png)
 
-<p class="pie">Captura de una versión anterior de la consola: la pantalla actual puede variar.</p>
-
 ---
 
 # Permisos de la clave

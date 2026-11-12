@@ -22,7 +22,7 @@ No hay paso de compilación. Cada lección es un fichero en `content/`, y el ín
 | `[Texto](aws:ec2-launch)` | Botón a la consola, en la región del alumno |
 | `::: demo Título` … `:::` | Pasos en la consola, marcables |
 | `::: ejercicio`, `::: limpieza` | Ejercicio o limpieza, marcables |
-| `::: aviso`, `::: novedad`, `::: nota` | Bloques informativos |
+| `::: aviso`, `::: nota` | Bloques informativos |
 | `::: flow` … `A :: detalle -> B` … `:::` | Diagrama de flujo |
 | `{{region}}`, `{{account}}`, `{{alias}}` | Datos del alumno |
 

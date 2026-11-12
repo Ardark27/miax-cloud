@@ -31,19 +31,19 @@ aws lambda update-function-code \
 Usa `Compress-Archive lambda_function.py paquete.zip` en PowerShell.
 :::
 
+Si solo usas la librería estándar y boto3, no hace falta incluir nada más. El paquete también se puede subir desde la consola (**Upload from** → **.zip file**) o desde el AWS Toolkit de VS Code.
+
 ---
 
 # Zip con dependencias
 
 Lambda corre en Linux. Si instalas en Windows o Mac, o con otra versión de Python, las librerías compiladas como pandas fallarán.
 
-::: novedad Pide el binario adecuado
-En vez de empaquetar tu entorno virtual, indica a pip la plataforma de destino.
-:::
+No empaquetes tu entorno virtual: indica a pip la plataforma de destino.
 
 ```bash
 pip install \
-  --platform manylinux2014_x86_64 \
+  --platform manylinux_2_28_x86_64 \
   --target package \
   --implementation cp \
   --python-version 3.14 \
@@ -56,7 +56,7 @@ cd ..
 zip paquete.zip lambda_function.py
 ```
 
-La arquitectura de la función debe ser x86_64. Para arm64 usa `manylinux2014_aarch64`.
+La arquitectura de la función debe ser x86_64. Para arm64 usa `manylinux_2_28_aarch64`.
 
 ---
 
@@ -165,7 +165,9 @@ def lambda_handler(event, context):
 2. Crea el paquete .zip con las dependencias para Linux.
 3. Crea un bucket y sube el paquete.
 4. Crea o actualiza la función indicando la ruta en S3.
-5. Sube el timeout y la memoria, y pruébala.
+5. Sube el timeout y la memoria, y pruébala desde la consola.
+
+Hazlo desde tu instancia EC2 conectada a VS Code: así el paquete se construye en Linux.
 :::
 
 ---

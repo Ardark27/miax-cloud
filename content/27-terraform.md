@@ -8,11 +8,11 @@ Definir la infraestructura en ficheros de texto.
 
 - La infraestructura se describe en ficheros versionables.
 - Se puede revisar, repetir y destruir de forma fiable.
-- Terraform funciona con muchos proveedores, incluidos AWS, Azure y Google Cloud.
+- Terraform funciona con muchos proveedores, incluidos AWS, Azure y Google Cloud, y permite infraestructuras híbridas.
+- Usa un lenguaje **declarativo**: describes el resultado, no los pasos.
+- Es un único binario escrito en Go, para Linux, Windows y macOS, con los mismos comandos en todos.
 
-::: novedad Licencia
-Desde 2023 Terraform usa la licencia BSL en vez de una licencia de código abierto. [OpenTofu](https://opentofu.org/) es su alternativa abierta y mantiene comandos muy similares.
-:::
+Terraform usa la licencia BSL, que no es de código abierto. [OpenTofu](https://opentofu.org/) es su alternativa abierta, con comandos muy similares.
 
 [Instalar Terraform](https://developer.hashicorp.com/terraform/install).
 
@@ -32,6 +32,7 @@ Escribir .tf -> terraform init :: descarga proveedores -> terraform plan :: prev
 
 ```bash
 terraform version
+terraform help
 terraform init
 terraform fmt
 terraform validate
@@ -39,6 +40,18 @@ terraform plan
 terraform apply
 terraform destroy
 ```
+
+---
+
+# Qué hace cada comando
+
+| Comando | Qué hace |
+|---|---|
+| `init` | Descarga proveedores y módulos en `.terraform`. Repítelo si los cambias |
+| `fmt` / `validate` | Formatea y comprueba la sintaxis |
+| `plan` | Muestra los cambios sin aplicarlos |
+| `apply` | Calcula el plan y, si lo apruebas, lo aplica |
+| `destroy` | Si lo apruebas, borra todo lo creado |
 
 ---
 
@@ -71,9 +84,7 @@ resource "aws_s3_bucket" "datos" {
 
 # Proveedor
 
-::: novedad Forma actual
-`version` dentro de `provider` está obsoleto. Las versiones se declaran en `required_providers`.
-:::
+Terraform necesita al menos un proveedor. Las versiones de Terraform y del proveedor se declaran en el bloque `terraform`; sin versión, usa la más reciente:
 
 ```hcl
 terraform {
@@ -115,9 +126,7 @@ terraform {
 }
 ```
 
-::: novedad Bloqueo sin DynamoDB
-`use_lockfile` bloquea el estado usando el propio S3. Ya no hace falta una tabla DynamoDB.
-:::
+`use_lockfile` bloquea el estado en el propio S3 para que dos personas no lo modifiquen a la vez.
 
 ---
 

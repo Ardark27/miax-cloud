@@ -1,0 +1,17 @@
+# Servicio de systemd para el panel de Streamlit en EC2.
+# Cambia TU_ALIAS y copia el fichero a /etc/systemd/system/miax-streamlit.service
+# Después: sudo systemctl daemon-reload && sudo systemctl enable --now miax-streamlit
+[Unit]
+Description=Panel Streamlit MIAX
+After=network-online.target
+
+[Service]
+User=ec2-user
+WorkingDirectory=/home/ec2-user/streamlit
+Environment=BUCKET=miax-TU_ALIAS-datos
+Environment=AWS_DEFAULT_REGION=eu-west-3
+ExecStart=/home/ec2-user/streamlit/.venv/bin/streamlit run app.py --server.address 0.0.0.0 --server.port 8501 --server.headless true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
