@@ -22,7 +22,9 @@
     ['eu-west-1', 'Europa (Irlanda)'],
     ['eu-central-1', 'Europa (Fráncfort)'],
     ['eu-south-2', 'Europa (España)'],
+    ['eu-north-1', 'Europa (Stockholm)'],
     ['us-east-1', 'EE. UU. (Virginia)'],
+
   ];
   const regional = (path) => (r) => `https://${r}.console.aws.amazon.com/${path.replaceAll('{r}', r)}`;
   const global = (path) => () => `https://console.aws.amazon.com/${path}`;
